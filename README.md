@@ -7,12 +7,11 @@ This is my repo for STATS 220.
 
 - I am a **Computer Science** major specializing in **Data Science**
 - I am currently an exchange student
-- I am taking *STATS 220* because I was looking for an interesting stats course and explore new perspectives on data
 
 ### Why I'm studying STATS 220?
 
-1. Learn how can technology affect data
-2. Interest in a stats course
+1. Learn how technology can affect data
+2. I am taking *STATS 220* because I was looking for an interesting stats course and explore new perspectives on data
 
 ---
 ## A *meme* how I feel about my university studies
