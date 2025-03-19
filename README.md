@@ -4,8 +4,8 @@ This is my repo for STATS 220.
 
 ## About me
 
-- I am a **Computer Science** major specializing in **Data Science**
-- I am currently an exchange student
+* I am a **Computer Science** major specializing in **Data Science**
+* I am currently an exchange student
 
 ### Why I'm studying STATS 220?
 
@@ -14,7 +14,7 @@ This is my repo for STATS 220.
 
 ## A *meme* how I feel about my university studies
 
-![](https://tenor.com/view/learning-studying-gif-26177059)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2VrY2g3Y2dhemRkbWMxNzZ6YmN6MnFzcjJnNGV0c3ZxNWJlb3BtdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1hXY6iNdTFpTW4je85/giphy.gif)
 
 ## Course Information
 
