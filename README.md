@@ -2,7 +2,6 @@
 
 This is my repo for STATS 220. 
 
-
 ## About me
 
 - I am a **Computer Science** major specializing in **Data Science**
@@ -13,15 +12,10 @@ This is my repo for STATS 220.
 1. Learn how technology can affect data
 2. I am taking *STATS 220* because I was looking for an interesting stats course and explore new perspectives on data
 
----
 ## A *meme* how I feel about my university studies
 
-![](https://tenor.com/bElGt.gif)
-
----
+![](https://tenor.com/view/learning-studying-gif-26177059)
 
 ## Course Information
 
 For more details about STATS 220, you can check out the official [STATS 220 Course Outline](https://courseoutline.auckland.ac.nz/dco/course/STATS/220/1203).
-
----
