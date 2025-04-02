@@ -56,9 +56,6 @@ summary_values <- latest_data %>%
   )
 avg_duration <- summary_values$avg_duration
 max_duration <- summary_values$max_duration
-
-cat("Average video duration:", round(avg_duration, 1), "minutes", "\nLongest video duration:", max_duration, "minutes")
-
 ```
 
 On average, I spend 'r round(avg_duration, 1)' minutes watching a YouTube videos, and the longest video I watched was 'r max_duration' minutes.
