@@ -58,7 +58,7 @@ avg_duration <- summary_values$avg_duration
 max_duration <- summary_values$max_duration
 ```
 
-On average, I spend 'r round(avg_duration, 1)' minutes watching a YouTube videos, and the longest video I watched was 'r max_duration' minutes.
+On average, I spend `r round(avg_duration, 1)` minutes watching a YouTube videos, and the longest video I watched was `r max_duration` minutes.
 
 ### Video Distribution
 
@@ -90,4 +90,4 @@ ggplot(latest_data, aes(x = factor(duration_group,
 
 ### Conclusion
 
-From this analysis, I can see that the majority of my videos fall into the education category, reflecting a strong interest in learning and gaining knowledge. Additionally, most of the videos I watch are between 'r duration_group[which.max(table(duration_group))]' long, indicating that I prefer content of a moderate length.
+From this analysis, I can see that the majority of my videos fall into the education category, reflecting a strong interest in learning and gaining knowledge. Additionally, most of the videos I watch are between `r duration_group[which.max(table(duration_group))]` long, indicating that I prefer content of a moderate length.
