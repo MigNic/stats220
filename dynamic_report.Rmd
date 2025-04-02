@@ -1,0 +1,98 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
+```
+
+```{css}
+body {
+  font-family: 'Helvetica', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+.bold-highlight {
+  font-weight: bold;
+  color: #e74c3c;
+}
+```
+
+## Analyzed My Youtube Viewing Habits
+
+This report analyzes my YouTube viewing data, summarizing video durations and content categories. It also provides visual insights into the types of videos I watch.
+
+### Summary of Video Durations
+
+The dataset includes a collection of YouTube videos I've watched. Below are some key statistics about the videos I watched:
+
+```{r}
+#load the dataset
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSrX2I61AkPoUlCu2wAf3B9dHucB0_RgBPiJ7LfXcImY1YU1oXKoAS8v-_WIoUN2qV4OdiyOFsKFdHI/pub?output=csv")
+
+#rename variables and create a new data frame
+latest_data <- logged_data %>%
+  rename(
+    date_watched = `When did you watch these videos?`,
+    video_title = `What is the title of the YouTube video?`,
+    video_category = `Which category best describes the content of the video?`,
+    video_duration = `How long is the video? (in minutes)`,
+    enjoyment_rating = `Enjoyment rating`,
+    recommend_video = `Would you recommend this video to others?`
+  )
+
+#calculate the average and max video duration
+summary_values <- latest_data %>%
+  summarise(
+    avg_duration = mean(video_duration, na.rm = TRUE),
+    max_duration = max(video_duration, na.rm = TRUE)
+  )
+avg_duration <- summary_values$avg_duration
+max_duration <- summary_values$max_duration
+```
+
+On average, I spend `r round(avg_duration, 1)` minutes watching a YouTube videos, and the longest video I watched was `r max_duration` minutes.
+
+### Video Distribution
+
+The bar chart below shows how my watched videos are distributed across different categories and the length of videos I typically watch:
+
+```{r}
+#plot the bar chart for video category
+ggplot(latest_data, aes(x = video_category)) +
+  geom_bar(fill = "maroon") +
+  labs(title = "Distribution of Video Categories", x = "Video Category", y = "Count") +
+  theme_minimal() +
+  coord_flip()
+
+#find the most common video category
+most_common_category <- names(which.max(table(latest_data$video_category)))
+```
+
+```{r}
+#create duration categories
+latest_data <- latest_data %>%
+  mutate(duration_group = case_when(
+    video_duration < 10 ~ "<10 minutes",
+    video_duration >= 10 & video_duration <= 60 ~ "10-60 minutes",
+    video_duration > 60 ~ ">60 minutes"
+  ))
+
+#plot the bar chart with the duration categories
+ggplot(latest_data, aes(x = factor(duration_group,
+                                   levels = c("<10 minutes", "10-60 minutes", ">60 minutes")))) +
+  geom_bar(fill = "#3F6D9B", color = "black") +
+  labs(title = "Distribution of Video Duration", x = "Video Duration", y = "Count") +
+  theme_minimal()
+```
+
+### Conclusion
+
+From this analysis, I can see that the majority of my videos fall into the `r most_common_category` category, reflecting a strong interest in learning and gaining knowledge. Additionally, most of the videos I watch are between 10-60 minutes long, indicating that I prefer content of a moderate length.
